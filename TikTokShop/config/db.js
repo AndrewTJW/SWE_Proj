@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
 
 let cached = global.tiktokshop_database; //assigning tiktokshop_database variable to [cached] object
+const database_name = "tiktokshop_db"
 
 if (!cached) {
   //if dont have an object
@@ -22,7 +23,7 @@ async function connectDB() {
 
     //creates a connection to mongoose if it doesnt have a cached connection
     cached.promise = mongoose
-      .connect(`${process.env.MONGODB_URI}/tiktokshop_db`, options)
+      .connect(`${process.env.MONGODB_URI}/${database_name}?retryWrites=true&w=majority&appName=Cluster0`, options)
       .then((mongoose) => {
         return mongoose;
       });
