@@ -11,7 +11,7 @@ const OrderPlaced = () => {
   useEffect(() => {
     setTimeout(() => {
       router.push('/my-orders')
-    }, 5000)
+    }, 5000) //for inngest batch process
   }, [])
 
   return (

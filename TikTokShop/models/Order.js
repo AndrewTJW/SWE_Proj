@@ -14,7 +14,7 @@ const orderSchema = new mongoose.Schema({
   date: { type: Number, required: true },
 });
 
-const Order = mongoose.models.order;
+let Order = mongoose.models.order;
 
 if (!Order) {
   Order = mongoose.model("order", orderSchema);
