@@ -29,8 +29,6 @@ const FeaturedProduct = () => {
   }, []);
     
  return (
-
-  return (
     <div className="mt-14">
       <div className="flex flex-col items-center">
         <p className="text-3xl font-medium">Featured Products</p>
@@ -84,7 +82,6 @@ const FeaturedProduct = () => {
       </div>
     </div>
   );
-    
   };
 
 export default FeaturedProduct;
