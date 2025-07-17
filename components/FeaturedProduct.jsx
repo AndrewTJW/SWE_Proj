@@ -1,3 +1,4 @@
+//Featured Product Component
 "use client";
 import React, { useEffect, useState } from "react";
 import { assets } from "@/assets/assets";
@@ -33,8 +34,8 @@ const FeaturedProduct = () => {
   return (
     <div className="mt-14">
       <div className="flex flex-col items-center">
-        <p className="text-3xl font-medium">Featured Products</p>
-        <div className="w-28 h-0.5 bg-black mt-2"></div>
+        <p className="text-3xl font-bold text-[#FE2C55]">Featured Products</p>
+        <div className="w-28 h-0.5 bg-[#FE2C55] mt-2"></div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-14 mt-12 md:px-14 px-4">
         {products.map((product) => (
@@ -47,11 +48,11 @@ const FeaturedProduct = () => {
               height={500}
             />
             <div className="group-hover:-translate-y-4 transition duration-300 absolute bottom-8 left-8 text-white space-y-2">
-              <p className="font-medium text-xl lg:text-2xl">{product.name}</p>
+              <p className="font-semibold text-xl lg:text-2xl">{product.name}</p>
               <p className="text-sm lg:text-base leading-5 max-w-60">
                 {product.description.slice(0, 60)}...
               </p>
-              <button className="flex items-center gap-1.5 bg-black px-4 py-2 rounded">
+              <button className="flex items-center gap-1.5 bg-[#FE2C55] hover:bg-[#e91b44] text-white px-4 py-2 rounded">
                 Buy now
                 <Image
                   className="h-3 w-3"
