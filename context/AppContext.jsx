@@ -131,6 +131,25 @@ export const AppContextProvider = (props) => {
     return Math.floor(totalAmount * 100) / 100;
   };
 
+  const toggleLike = async (productId) => {
+    try {
+      const token = await getToken();
+      const { data } = await axios.post(
+        "/api/product/like",
+        { productId },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      if (data.success) {
+        fetchProductData();
+      } else {
+        toast.error(data.message);
+      }
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
+
   useEffect(() => {
     fetchProductData();
   }, []);
@@ -158,6 +177,7 @@ export const AppContextProvider = (props) => {
     updateCartQuantity,
     getCartCount,
     getCartAmount,
+    toggleLike,
   };
 
   return (

@@ -2,9 +2,37 @@ import React from 'react'
 import { assets } from '@/assets/assets'
 import Image from 'next/image'
 import { useAppContext } from '@/context/AppContext'
+import { useState, useEffect } from 'react'
+import toast from 'react-hot-toast'
+
 
 const ProductCard = ({ product }) => {
-  const { currency, router } = useAppContext()
+  const { currency, router, user, toggleLike } = useAppContext()
+  const [ liked, setLiked ] = useState(false)
+  const [ likeCount, setLikeCount ] = useState(product.likedBy?.length || 0)
+  const [likeTimeOut, setLikeTimeOut] = useState(false)
+
+  const handleLike = async (e) => {
+    e.stopPropagation(); //prevents it from going into another route nested on the component
+
+    try {
+      setLikeTimeOut(true)
+      await toggleLike(product._id);
+      setLikeTimeOut(false)
+      setLiked((prev) => !prev);
+      setLikeCount((prev) => (liked ? prev - 1 : prev + 1));
+    } catch(err) {
+      console.error('Error: ', err)
+      toast.error(err.message)
+    }
+  }
+
+  useEffect(() => {
+    if (user && (product.likedBy || []).includes(user.id)) {
+      setLiked(true);
+    }
+  }, [user, product.likedBy]);
+
 
   return (
     <div
@@ -23,10 +51,10 @@ const ProductCard = ({ product }) => {
           width={800}
           height={800}
         />
-        <button className="absolute top-2 right-2 bg-white p-2 rounded-full shadow hover:shadow-md transition">
+        <button disabled={likeTimeOut} onClick={handleLike} className="absolute top-2 right-2 bg-white p-2 rounded-full shadow hover:shadow-md transition">
           <Image
             className="h-3 w-3"
-            src={assets.heart_icon}
+            src={liked ? assets.hearts_filled : assets.heart_icon}
             alt="heart_icon"
           />
         </button>
@@ -40,21 +68,7 @@ const ProductCard = ({ product }) => {
 
       {/* Ratings */}
       <div className="flex items-center gap-2">
-        <p className="text-xs text-gray-600">{4.5}</p>
-        <div className="flex items-center gap-0.5">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <Image
-              key={index}
-              className="h-3 w-3"
-              src={
-                index < Math.floor(4)
-                  ? assets.star_icon
-                  : assets.star_dull_icon
-              }
-              alt="star_icon"
-            />
-          ))}
-        </div>
+        <p className="text-sm text-gray-600">Likes: {likeCount}</p>
       </div>
 
       {/* Price and Button */}

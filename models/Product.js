@@ -9,6 +9,11 @@ const productSchema = new mongoose.Schema({
   image: { type: Array, required: true },
   category: { type: String, required: true },
   date: { type: Number, required: true },
+  likedBy: {
+    type: [String],
+    ref: "user",
+    default: [],
+  },
 });
 
 let Product = mongoose.models.product;
