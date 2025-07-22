@@ -139,3 +139,5 @@ This project is created as part of a university assignment and is intended for e
 - Vercel – for fast and efficient deployment of Next.js apps
 - Next.js Team – for the powerful frontend framework
 - All team members for their collaboration, dedication, and effort throughout the semester 💪
+
+## 🙏 Thank You
