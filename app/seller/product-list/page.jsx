@@ -87,7 +87,7 @@ const ProductList = () => {
                     <td className="px-4 py-3 max-sm:hidden">
                       <button
                         onClick={() => router.push(`/product/${product._id}`)}
-                        className="flex items-center gap-1 px-1.5 md:px-3.5 py-2 bg-black text-white rounded-md"
+                        className="flex items-center gap-1 px-1.5 md:px-3.5 py-2 bg-[#FE2C55] text-white rounded-md"
                       >
                         <span className="hidden md:block">Visit</span>
                         <Image

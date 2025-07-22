@@ -15,11 +15,7 @@ const About = () => {
             About <span className="text-[#FE2C55]">TikTok Shop</span>
           </h1>
           <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            TikTok Shop is a unique e-commerce platform integrated into TikTok's
-            short-form video experience. Our goal is to seamlessly connect
-            entertainment and online shopping, transforming product discovery
-            and purchase behavior through influencer content and user
-            interaction.
+            TikTok Shop is a unique e-commerce platform integrated into TikTok's short-form video experience. Our goal is to seamlessly connect entertainment and online shopping, transforming product discovery and purchase behavior through influencer content and user interaction.
           </p>
         </div>
 
@@ -59,7 +55,7 @@ const About = () => {
             Engineering and HCI (TEB2014)" for the May 2025 Semester at
             Universiti Teknologi PETRONAS.
           </p>
-          <ul className="list-disc list-inside text-gray-700" align="justify">
+          <ul className="list-disc list-inside text-gray-700" align="center">
             <li>Andrew Tan Joe Wen (22010175)</li>
             <li>Muhammad Ikhwan bin Mohd Azahari (22010398)</li>
             <li>‘Affan Najiy bin Rusdi (22010453)</li>

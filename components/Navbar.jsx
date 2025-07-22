@@ -21,23 +21,23 @@ const Navbar = () => {
       />
 
       <div className="flex items-center gap-4 lg:gap-8 max-md:hidden">
-        <Link href="/" className="hover:text-pink-500 transition">
+        <Link href="/" className="hover:text-[#FE2C55] transition">
           Home
         </Link>
-        <Link href="/all-products" className="hover:text-pink-500 transition">
+        <Link href="/all-products" className="hover:text-[#FE2C55] transition">
           Shop
         </Link>
-        <Link href="/about-us" className="hover:text-pink-500 transition">
+        <Link href="/about-us" className="hover:text-[#FE2C55] transition">
           About Us
         </Link>
-        <Link href="/contact" className="hover:text-pink-500 transition">
+        <Link href="/contact" className="hover:text-[#FE2C55] transition">
           Contact
         </Link>
 
         {isSeller && (
           <button
             onClick={() => router.push("/seller")}
-            className="text-xs border border-pink-400 text-pink-500 px-4 py-1.5 rounded-full hover:bg-pink-50 transition"
+            className="text-xs border border-[#FE2C55] text-[#FE2C55] px-4 py-1.5 rounded-full hover:bg-pink-50 transition"
           >
             Seller Dashboard
           </button>
@@ -66,7 +66,7 @@ const Navbar = () => {
         ) : (
           <button
             onClick={openSignIn}
-            className="flex items-center gap-2 hover:text-pink-500 transition"
+            className="flex items-center gap-2 hover:text-[#FE2C55] transition"
           >
             <Image src={assets.user_icon} alt="user icon" />
             Account
@@ -78,7 +78,7 @@ const Navbar = () => {
         {isSeller && (
           <button
             onClick={() => router.push("/seller")}
-            className="text-xs border border-pink-400 text-pink-500 px-4 py-1.5 rounded-full hover:bg-pink-50 transition"
+            className="text-xs border border-[#FE2C55] text-[#FE2C55] px-4 py-1.5 rounded-full hover:bg-pink-50 transition"
           >
             Seller
           </button>
@@ -117,7 +117,7 @@ const Navbar = () => {
         ) : (
           <button
             onClick={openSignIn}
-            className="flex items-center gap-2 hover:text-pink-500 transition"
+            className="flex items-center gap-2 hover:text-[#FE2C55] transition"
           >
             <Image src={assets.user_icon} alt="user icon" />
             Account

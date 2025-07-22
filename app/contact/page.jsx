@@ -21,10 +21,10 @@ const Contact = () => {
         <div className="max-w-md mx-auto bg-gray-100 p-6 rounded-2xl shadow-md space-y-6">
           <div className="flex items-center space-x-4">
             <Image className="w-6 h-6" src={assets.box_icon} alt="phone icon" />
-            <p className="text-[#FE2C55] text-lg">+60123-456-789</p>
+            <p className="text-[#FE2C55] text-lg">+6012-3456789</p>
           </div>
           <div className="flex items-center space-x-4">
-            <Image className="w-6 h-6" src={assets.box_icon} alt="email icon" />
+            <Image className="w-6 h-6" src={assets.box_icon} alt="phone icon" />
             <p className="text-[#FE2C55] text-lg">teknologia05@gmail.com</p>
           </div>
         </div>
