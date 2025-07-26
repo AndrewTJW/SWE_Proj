@@ -111,7 +111,7 @@ const Product = () => {
             </div>
             <div className="flex flex-col items-center">
                 <div className="flex flex-col items-center mb-4 mt-16">
-                    <p className="text-3xl font-medium">More <span className="font-medium text-green-500">Products</span></p>
+                    <p className="text-3xl font-medium">More <span className="font-medium text-[#FE2C55]">Products</span></p>
                     <div className="w-28 h-0.5 bg-black mt-2"></div>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mt-6 pb-14 w-full">
